@@ -2,4 +2,5 @@
 !*.cpp
 # Or directories
 !.gitignore
+!lab*/
 !README.md
