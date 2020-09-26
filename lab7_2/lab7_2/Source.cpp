@@ -14,5 +14,5 @@ int main()
         number /= 10;
         i++;
     }
-    printf_s("Result = %lf", double(result)/i);
+    printf_s("Result = %lf", double(result)/(i>0?i:1));
 }
