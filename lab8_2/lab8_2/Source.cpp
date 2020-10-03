@@ -18,4 +18,5 @@ int main()
         i++;
     } while (number > 0);
     printf_s("Result = %lf", double(result)/i);
+    return 0;
 }

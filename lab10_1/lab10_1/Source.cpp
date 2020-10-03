@@ -25,4 +25,5 @@ int main()
         }
     }
     printf_s("Result: %lf\n", result);
+    return 0;
 }

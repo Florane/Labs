@@ -26,4 +26,5 @@ int main()
         printf_s("Result: %d",result);
 
     printf_s("\n");
+    return 0;
 }

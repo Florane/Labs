@@ -12,4 +12,5 @@ int main()
         result *= a;
     }
     printf_s("Factorial: %d\n", result);
+    return 0;
 }

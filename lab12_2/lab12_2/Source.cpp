@@ -10,4 +10,5 @@ int main()
         second = buffer;
     }
     printf_s("Result: %d\n",second*100);
+    return 0;
 }

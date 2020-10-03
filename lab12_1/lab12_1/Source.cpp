@@ -12,4 +12,5 @@ int main()
 {
     int result = recursive(15)*100;
     printf_s("\nResult: %d\n",result);
+    return 0;
 }

@@ -13,4 +13,5 @@ int main()
     if (x > 10) { result = 1 / tan(x); }
 
     printf_s("Result: %lf\n", result);
+    return 0;
 }

@@ -19,4 +19,5 @@ int main()
         else if(a > 10) {result = 1/tan(a);}
         printf_s("Result on %lf: %lf\n",a,result);
     }
+    return 0;
 }

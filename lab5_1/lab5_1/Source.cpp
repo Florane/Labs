@@ -10,4 +10,5 @@ int main()
     else
         printf_s("no");
     printf_s("\n");
+    return 0;
 }

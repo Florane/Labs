@@ -15,4 +15,5 @@ int main()
         i++;
     }
     printf_s("Result = %lf", double(result)/(i>0?i:1));
+    return 0;
 }

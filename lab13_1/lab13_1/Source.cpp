@@ -20,9 +20,9 @@ void result(int* num, int size)
 
     for(int i = 0;i < size-1;i+=2)
     {
-        int buffer = num[i];
-        num[i] = num[i+1];
-        num[i+1] = buffer;
+        num[i] = num[i]^num[i+1];
+        num[i+1] = num[i+1]^num[i];
+        num[i] = num[i]^num[i+1];
     }
     printf_s("Result(2):");
     for(int i = 0;i < size;i++)
@@ -76,4 +76,5 @@ int main()
         case '1': manual(size); break;
         case '2': random(size); break;
     }
+    return 0;
 }
