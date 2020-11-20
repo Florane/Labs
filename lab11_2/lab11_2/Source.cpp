@@ -31,7 +31,7 @@ int main()
 
     double result = 0;
     double step = e+1;
-    for(int i = 0;fabs(step)>e;i++)
+    for(int i = 0;fabs(step)>e;i++) // math.h needed here
     {
         step = i%2==0 ? -1 : 1;
         step *= (factorial(x+1))/(pow(i+1,i+1));

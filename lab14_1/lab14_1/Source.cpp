@@ -3,7 +3,7 @@
 #include <time.h>
 #include <math.h>
 
-void outputFile(int* num, int size)
+void outputFile(int* num, int size) // output to file
 {
     FILE* file;
     fopen_s(&file,"log.txt","w");
@@ -14,7 +14,7 @@ void outputFile(int* num, int size)
     fclose(file);
 }
 
-void body(int* num, int size)
+void body(int* num, int size) // calculate geometric mean
 {
     printf_s("Start:");
     for(int i = 0;i < size;i++)
@@ -53,10 +53,11 @@ void body(int* num, int size)
     printf("Done\n");
 }
 
-void inputManual(int size)
+void inputManual(int size) // input manually
 {
     printf_s("Enter %d numbers: ", size);
-    int* num = (int*) malloc(size*sizeof(int));
+    int num[256];
+    // int* num = (int*) malloc(size*sizeof(int));
     for(int i = 0;i < size;i++)
     {
         scanf_s("%d",&num[i]);
@@ -64,9 +65,10 @@ void inputManual(int size)
     body(num,size);
 }
 
-void inputRandom(int size)
+void inputRandom(int size) //input random from A to B
 {
-    int* num = (int*) malloc(size*sizeof(int));
+    int num[256];
+    // int* num = (int*) malloc(size*sizeof(int));
     int A, B;
     printf_s("Enter begin: ");
     scanf_s("%d",&A);
@@ -80,7 +82,7 @@ void inputRandom(int size)
     body(num,size);
 }
 
-void inputFromFile()
+void inputFromFile() // input from file
 {
     FILE* file;
     fopen_s(&file, "file.txt", "r");
@@ -99,7 +101,7 @@ void inputFromFile()
 	body(&num[0],i);
 }
 
-int main()
+int main() // selector
 {
     srand(time(0));
     int size;

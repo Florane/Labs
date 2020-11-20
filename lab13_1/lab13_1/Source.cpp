@@ -9,7 +9,7 @@ void result(int* num, int size)
     for(int i = 0;i < size;i++)
         printf_s(" %d",num[i]);
     printf_s("\n");
-    
+
     double result = 1;
     for(int i = 0;i < size;i++)
     {
@@ -33,7 +33,8 @@ void result(int* num, int size)
 void manual(int size)
 {
     printf_s("Enter %d numbers: ", size);
-    int* num = (int*) malloc(size*sizeof(int));
+    int num[256];
+    //int* num = (int*) malloc(size*sizeof(int));
     for(int i = 0;i < size;i++)
     {
         scanf_s("%d",&num[i]);
@@ -43,7 +44,8 @@ void manual(int size)
 
 void random(int size)
 {
-    int* num = (int*) malloc(size*sizeof(int));
+    int num[256];
+    //int* num = (int*) malloc(size*sizeof(int));
     int A, B;
     printf_s("Enter begin: ");
     scanf_s("%d",&A);

@@ -6,12 +6,12 @@ struct Student
     int grade[3];
 };
 
-double mean(Student student)
+double mean(Student student) //calculates mean grade
 {
     return (student.grade[0]+student.grade[1]+student.grade[2])/3.0;
 }
 
-void body(Student* num,int size)
+void body(Student* num,int size) // calculate biggest mean grade
 {
     double max = -1;int pos;
     for(int i = 0;i < size;i++)
@@ -25,7 +25,7 @@ void body(Student* num,int size)
     printf_s("Student %d has the biggest mean grade: %lf\n",pos+1,max);
 }
 
-void inputManual()
+void inputManual() // input manually
 {
     int size;
     printf_s("Enter a count of students: ");
@@ -40,7 +40,7 @@ void inputManual()
     body(num,size);
 }
 
-void inputFromFile()
+void inputFromFile() // input from text file
 {
     FILE* file;
     fopen_s(&file, "file.txt", "r");
@@ -59,7 +59,7 @@ void inputFromFile()
     body(&num[0],i);
 }
 
-int main()
+int main() // selector
 {
     printf_s("Select: \n1: Enter manually\n2: Enter from file\n");
     char c;

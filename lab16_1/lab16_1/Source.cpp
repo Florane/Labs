@@ -43,7 +43,8 @@ void inputManual() // input manually
     printf_s("Enter a count of students: ");
     scanf_s("%d",&size);
 
-    Student* num = (Student*) malloc(size*sizeof(Student));
+    Student num[85];
+    // Student* num = (Student*) malloc(size*sizeof(Student));
     for(int i = 0;i < size;i++)
     {
         printf_s("Enter 3 grades for student %d: ",i+1);
