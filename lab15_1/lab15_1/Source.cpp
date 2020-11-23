@@ -1,6 +1,8 @@
 #include <iostream>
 #include <conio.h>
 
+#define SIZE 85
+
 struct Student
 {
     int grade[3];
@@ -44,7 +46,7 @@ void inputFromFile() // input from text file
 {
     FILE* file;
     fopen_s(&file, "file.txt", "r");
-    Student num[85]; int i = 0, test;
+    Student num[SIZE]; int i = 0, test;
     while(!feof(file))
     {
         Student buffer;

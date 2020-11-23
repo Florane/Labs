@@ -3,6 +3,8 @@
 #include <time.h>
 #include <math.h>
 
+#define SIZE 256
+
 void outputFile(int* num, int size) // output to file
 {
     FILE* file;
@@ -56,7 +58,7 @@ void body(int* num, int size) // calculate geometric mean
 void inputManual(int size) // input manually
 {
     printf_s("Enter %d numbers: ", size);
-    int num[256];
+    int num[SIZE];
     // int* num = (int*) malloc(size*sizeof(int));
     for(int i = 0;i < size;i++)
     {
@@ -67,7 +69,7 @@ void inputManual(int size) // input manually
 
 void inputRandom(int size) //input random from A to B
 {
-    int num[256];
+    int num[SIZE];
     // int* num = (int*) malloc(size*sizeof(int));
     int A, B;
     printf_s("Enter begin: ");
@@ -86,7 +88,7 @@ void inputFromFile() // input from file
 {
     FILE* file;
     fopen_s(&file, "file.txt", "r");
-	int num[256]; int i = 0, test;
+	int num[SIZE]; int i = 0, test;
 	while(!feof(file))
 	{
 		int buffer;

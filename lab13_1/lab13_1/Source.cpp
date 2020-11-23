@@ -3,6 +3,8 @@
 #include <time.h>
 #include <math.h>
 
+#define SIZE 256
+
 void result(int* num, int size)
 {
     printf_s("Start:");
@@ -33,7 +35,7 @@ void result(int* num, int size)
 void manual(int size)
 {
     printf_s("Enter %d numbers: ", size);
-    int num[256];
+    int num[SIZE];
     //int* num = (int*) malloc(size*sizeof(int));
     for(int i = 0;i < size;i++)
     {
@@ -44,7 +46,7 @@ void manual(int size)
 
 void random(int size)
 {
-    int num[256];
+    int num[SIZE];
     //int* num = (int*) malloc(size*sizeof(int));
     int A, B;
     printf_s("Enter begin: ");

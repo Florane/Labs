@@ -1,6 +1,8 @@
 #include <iostream>
 #include <conio.h>
 
+#define SIZE 85
+
 struct Student
 {
     int grade[3];
@@ -43,7 +45,7 @@ void inputManual() // input manually
     printf_s("Enter a count of students: ");
     scanf_s("%d",&size);
 
-    Student num[85];
+    Student num[SIZE];
     // Student* num = (Student*) malloc(size*sizeof(Student));
     for(int i = 0;i < size;i++)
     {
@@ -71,7 +73,7 @@ void inputFromFile() // input from text file
     FILE* file;
     fopen_s(&file, "file.txt", "r");
 
-    Student num[85]; int i = 0, test;
+    Student num[SIZE]; int i = 0, test;
     while(!feof(file))
     {
         Student buffer;
@@ -94,7 +96,7 @@ void inputFromBinary() // input from binary file
     int size;
     fread_s(&size,sizeof(int),sizeof(int),1,file);
 
-    Student num[85];
+    Student num[SIZE];
     fread_s(num,sizeof(Student)*85,sizeof(Student),size,file);
 
     body(&num[0],size);

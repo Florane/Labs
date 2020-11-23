@@ -2,6 +2,8 @@
 #include <conio.h>
 #include <time.h>
 
+#define SIZE 256
+
 struct Size
 {
     int x,y;
@@ -32,7 +34,7 @@ int min(int* num,int size,bool returnPosition) // minimum in column
     return result;
 }
 
-int maxOutput(int num[256][256],Size size) // maximum in whole array
+int maxOutput(int num[SIZE][SIZE],Size size) // maximum in whole array
 {
     int result = num[0][0];
     for(int a = 0;a < size.x;a++)
@@ -66,7 +68,7 @@ void spaceOutput(int input,int max) // print output with minimal reserved space
         printf_s("%d",input);
 }
 
-void outputTerminal(int num[256][256],Size size) //output to terminal
+void outputTerminal(int num[SIZE][SIZE],Size size) //output to terminal
 {
     int max = maxOutput(num,size);
     for(int b = 0;b < size.y;b++)
@@ -79,7 +81,7 @@ void outputTerminal(int num[256][256],Size size) //output to terminal
     }
 }
 
-void outputToFile(int num[256][256],Size size) // output to file
+void outputToFile(int num[SIZE][SIZE],Size size) // output to file
 {
     FILE* file;
     fopen_s(&file, "file.txt", "w");
@@ -95,7 +97,7 @@ void outputToFile(int num[256][256],Size size) // output to file
     fclose(file);
 }
 
-void outputToBinary(int num[256][256],Size size) // output to binary file
+void outputToBinary(int num[SIZE][SIZE],Size size) // output to binary file
 {
     FILE* file;
     fopen_s(&file, "file.bin", "wb");
@@ -108,7 +110,7 @@ void outputToBinary(int num[256][256],Size size) // output to binary file
     fclose(file);
 }
 
-void outputSelector(int num[256][256],Size size) //selector for output type
+void outputSelector(int num[SIZE][SIZE],Size size) //selector for output type
 {
     printf_s("Select: \n1: Output to terminal\n2: Save to file\n3: Save to binary\n");
     char c;
@@ -124,11 +126,11 @@ void outputSelector(int num[256][256],Size size) //selector for output type
     }
 }
 
-void body(int num[256][256],Size size) // main body
+void body(int num[SIZE][SIZE],Size size) // main body
 {
     outputSelector(num,size);
 
-    int mins[256];
+    int mins[SIZE];
     // int* mins = (int*) malloc(size.x*sizeof(int));
     for(int i = 0;i < size.x;i++)
     {
@@ -148,7 +150,7 @@ void inputManual() // input manually
     printf_s("Enter size y: ");
     scanf_s("%d",&size.y);
 
-    int num[256][256];
+    int num[SIZE][SIZE];
     // int** num = (int**) malloc(size.x*sizeof(int*));
     // for(int i = 0;i < size.x;i++)
     //     num[i] = (int*) malloc(size.y*sizeof(int));
@@ -171,7 +173,7 @@ void inputFromFile() // input from file
     fopen_s(&file, "file.txt", "r");
     fscanf_s(file,"%d%d",&size.x,&size.y);
 
-    int num[256][256];
+    int num[SIZE][SIZE];
     // int** num = (int**) malloc(size.x*sizeof(int*));
     // for(int i = 0;i < size.x;i++)
     //     num[i] = (int*) malloc(size.y*sizeof(int));
@@ -194,7 +196,7 @@ void inputFromBinary() //input from binary file
     fopen_s(&file, "file.bin", "rb");
     fread_s(&size,sizeof(Size),sizeof(Size),1,file);
 
-    int num[256][256];
+    int num[SIZE][SIZE];
     // int** num = (int**) malloc(size.x*sizeof(int*));
     // for(int i = 0;i < size.x;i++)
     //     num[i] = (int*) malloc(size.y*sizeof(int));
@@ -222,7 +224,7 @@ void inputRandom() //input random from begin to end
     printf_s("Enter end: ");
     scanf_s("%d",&end);
 
-    int num[256][256];
+    int num[SIZE][SIZE];
     // int** num = (int**) malloc(size.x*sizeof(int*));
     // for(int i = 0;i < size.x;i++)
     //     num[i] = (int*) malloc(size.y*sizeof(int));
@@ -245,7 +247,7 @@ void inputFormula() //input through preset formula
     printf_s("Enter size y: ");
     scanf_s("%d",&size.y);
 
-    int num[256][256];
+    int num[SIZE][SIZE];
     // int** num = (int**) malloc(size.x*sizeof(int*));
     // for(int i = 0;i < size.x;i++)
     //     num[i] = (int*) malloc(size.y*sizeof(int));
