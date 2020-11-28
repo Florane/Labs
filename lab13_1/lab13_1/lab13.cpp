@@ -64,6 +64,10 @@ void random(int size)
 
 void selector()
 {
+    int size;
+    printf_s("Enter size: ");
+    scanf_s("%d", &size);
+
     char c;
     printf_s("Select: \n1: Enter manually\n2: Enter random\n");
     do {
@@ -81,7 +85,4 @@ void selector()
 void init()
 {
     srand(time(0));
-    int size;
-    printf_s("Enter size: ");
-    scanf_s("%d",&size);
 }
