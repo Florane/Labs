@@ -47,6 +47,7 @@ void manual(int size)
 
 void random(int size)
 {
+    srand(time(0));
     int num[SIZE];
     //int* num = (int*) malloc(size*sizeof(int));
     int A, B;
@@ -64,6 +65,10 @@ void random(int size)
 
 void selector()
 {
+    int size;
+    printf_s("Enter size: ");
+    scanf_s("%d",&size);
+
     char c;
     printf_s("Select: \n1: Enter manually\n2: Enter random\n");
     do {
@@ -76,12 +81,4 @@ void selector()
         case '1': manual(size); break;
         case '2': random(size); break;
     }
-}
-
-void init()
-{
-    srand(time(0));
-    int size;
-    printf_s("Enter size: ");
-    scanf_s("%d",&size);
 }
