@@ -67,7 +67,11 @@ void selector()
 {
     int size;
     printf_s("Enter size: ");
+<<<<<<< HEAD
     scanf_s("%d",&size);
+=======
+    scanf_s("%d", &size);
+>>>>>>> 5d43380e3f4349533914067cd94f6b4384324b13
 
     char c;
     printf_s("Select: \n1: Enter manually\n2: Enter random\n");
@@ -82,3 +86,11 @@ void selector()
         case '2': random(size); break;
     }
 }
+<<<<<<< HEAD
+=======
+
+void init()
+{
+    srand(time(0));
+}
+>>>>>>> 5d43380e3f4349533914067cd94f6b4384324b13
